@@ -6,9 +6,9 @@ class Workspace extends Component {
     render() {
       return(
           <div className="Workspace">
-          <Artboard></Artboard>
-          <Artboard></Artboard>
-          <Artboard></Artboard>
+          <Artboard {...this.props} name='1' />
+          <Artboard {...this.props} name='2' />
+          <Artboard {...this.props} name='3' />
           </div>
       )
     }
