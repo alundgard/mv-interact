@@ -1,6 +1,10 @@
 .Artboard {
     border: 1px solid black;
     background: white;
-    width: 350px;
+    width: auto;
     height: auto;
+}
+
+.role-legend {
+    fill: black;
 }
