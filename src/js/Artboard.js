@@ -22,9 +22,11 @@ class Artboard extends Component {
     }
 
     render() {
+      let classname = "Artboard " + this.state.name;
       return(
-      <div className="Artboard">
+      <div className={classname}>
         <div id={this.state.name}></div>
+        {/* <svg class="box"></svg> */}
       </div>
       )
     }

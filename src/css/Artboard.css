@@ -3,8 +3,31 @@
     background: white;
     width: auto;
     height: auto;
+    position: relative;
 }
 
 .role-legend {
     fill: black;
+}
+
+.vis0 {
+    width: 350px;
+}
+
+.vis1 {
+    width: 400px;
+}
+
+.vis2 {
+    width: 785px;
+}
+
+.box {
+    position: absolute;
+    top: 10px;
+    left: 360px;
+    height: 80px;
+    width: 80px;
+    fill: red;
+    stroke: red;
 }
