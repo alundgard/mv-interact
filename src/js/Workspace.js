@@ -5,19 +5,6 @@ import * as $ from 'jquery';
 
 class Workspace extends Component {
     componentDidMount() {
-      // $("role-legend").hover(() => {
-      //   console.log($(this))
-      //   $(this).style.stroke = "blue";
-      // }, () => {})
-      // document.getElementsByClassName("role-legend")[0].style.stroke = "blue";
-      
-      // $("g.mark-group > *").on('click', () => {
-      //   console.log("Clicked!");
-      // });
-
-      // $("g.role-legend").each((e,i) => {
-      //   i.style.pointerEvents = 'auto';
-      // });
 
       $("g.role-legend-title").each((e,i) => {
         i.style.pointerEvents = 'auto';
@@ -43,9 +30,9 @@ class Workspace extends Component {
           $("g.mark-text.role-legend-title").each((e,i) => {
             i.style.stroke = "black";
             i.style.fill = "black";
-          });  
+          });
         }
-      })
+      });
 
       $("#clickBottom").click(() => {
         if (window.confirm("Facet Origin vertically?")) { 
@@ -59,18 +46,33 @@ class Workspace extends Component {
             i.style.fill = "black";
           });  
         }
-      })
+      });
+
+      $("#reset").click(() => {
+        $(".vis0").show();
+        $(".vis1").hide();
+        $(".vis2").hide();
+        $("#clickRight").show();
+        $("#clickBottom").show();
+
+        $("g.mark-text.role-legend-title").each((e,i) => {
+          i.style.stroke = "black";
+          i.style.fill = "black";
+        });
+      });
+
 
     }
 
     render() {
       return(
           <div className="Workspace">
-          <div id="clickRight"></div>
-          <div id="clickBottom"></div>
-          <Artboard {...this.props} number='0' />
-          <Artboard {...this.props} number='1' />
-          <Artboard {...this.props} number='2' />
+            <button id="reset">Reset</button>
+            <div id="clickRight"></div>
+            <div id="clickBottom"></div>
+            <Artboard {...this.props} number='0' />
+            <Artboard {...this.props} number='1' />
+            <Artboard {...this.props} number='2' />
           </div>
       )
     }

@@ -35,3 +35,7 @@
 #clickBottom:hover {
     background: gray;
 }
+
+#reset {
+    float: right;
+}
