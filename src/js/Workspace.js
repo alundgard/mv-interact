@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Artboard from './Artboard';
+import View from './View';
 import '../css/Workspace.css';
 import * as $ from 'jquery';
 
@@ -61,7 +61,6 @@ class Workspace extends Component {
         });
       });
 
-
     }
 
     render() {
@@ -70,9 +69,9 @@ class Workspace extends Component {
             <button id="reset">Reset</button>
             <div id="clickRight"></div>
             <div id="clickBottom"></div>
-            <Artboard {...this.props} number='0' />
-            <Artboard {...this.props} number='1' />
-            <Artboard {...this.props} number='2' />
+            <View {...this.props} number='0' />
+            <View {...this.props} number='1' />
+            <View {...this.props} number='2' />
           </div>
       )
     }

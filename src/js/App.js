@@ -7,7 +7,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <p>
-            Artboard - Interactions
+            Multi-View-Interactions
           </p>
         </header>
       </div>
