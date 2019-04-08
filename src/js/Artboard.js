@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../css/Artboard.css';
+import '../css/View.css';
 import vegaEmbed from 'vega-embed';
 import Spec from '../data/spec.js';
 
-class Artboard extends Component {
+class View extends Component {
     constructor(props) {
       let number = props.number;
       let name = 'vis' + number;
@@ -22,7 +22,7 @@ class Artboard extends Component {
     }
 
     render() {
-      let classname = "Artboard " + this.state.name;
+      let classname = "View " + this.state.name;
       return(
       <div className={classname}>
         <div id={this.state.name}></div>
@@ -31,4 +31,4 @@ class Artboard extends Component {
       )
     }
 }
-export default Artboard;
+export default View;
