@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../css/View.css';
 import vegaEmbed from 'vega-embed';
+import * as vl from 'vega-lite';
+import * as vega from 'vega';
 import Spec from '../data/spec.js';
 
 class View extends Component {
@@ -15,10 +17,18 @@ class View extends Component {
     }
 
     componentDidMount() {
-      var opt = { "renderer": "svg" }; 
-      var spec = Spec[this.state.number];
+      let opt = { "renderer": "svg" }; 
+      let spec = Spec[this.state.number];
       let id = '#' + this.state.name;
       vegaEmbed(id, spec, opt);
+      let vgSpec = vl.compile(spec).spec;
+      let runtime = vega.parse(vgSpec);
+      var view = new vega.View(runtime)
+        .logLevel(vega.Warn) // set view logging level
+        .initialize(document.querySelector(id)) // set parent DOM element
+        .renderer('svg') // set render type (defaults to 'canvas')
+        .hover() // enable hover event processing
+        .run(); // update and render the view
     }
 
     render() {

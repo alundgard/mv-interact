@@ -61,7 +61,6 @@ class Workspace extends Component {
         });
       });
 
-
     }
 
     render() {
